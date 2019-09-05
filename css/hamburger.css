@@ -1,0 +1,49 @@
+/* Scss Document */
+.responsive-globalmenu {
+  position: absolute;
+  top: 53px;
+  right: 12%; }
+
+.hamburger {
+  display: block;
+  opacity: 1.0;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  z-index: 2; }
+
+.hamburger-inner {
+  display: block;
+  width: 22px;
+  height: 1.8px;
+  margin-top: 7.2px;
+  background: #d1b695;;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    display: block;
+    position: absolute;
+    content: "";
+    z-index: -1;
+    width: 22px;
+    height: 1.8px;
+    background: #d1b695;;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out; }
+  .hamburger-inner::before {
+    top: 0; }
+  .hamburger-inner::after {
+    top: 14.4px; }
+
+.hamburger-open .hamburger-inner {
+  background: none; }
+  .hamburger-open .hamburger-inner::before, .hamburger-open .hamburger-inner::after {
+    top: 7.2px; }
+  .hamburger-open .hamburger-inner::before {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  .hamburger-open .hamburger-inner::after {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
