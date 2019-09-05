@@ -3,26 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/ress.css">
+<link href="css/hamburger.css" rel="stylesheet">
 <link rel="icon" href="images/icon.gif">
-<style>
-        
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="x-ua-compatible" content="IE=Edge">
 <title>サンプルサイト</title>
 </head>
 <body>
 <div class="wrapper">
     <header id="header">
         <section class="header-section">
-            <h1 class="site-title">森の動物</h1>
+            <h1 class="site-title">動物が住む森</h1>
             <nav class="global-navigation">
-                <ul>
+                <ul class="site__ul">
                     <li><a href="">ホーム</a></li>
                     <li><a href="">ニュース</a></li>
                     <li><a href="">コンセプト</a></li>
                     <li><a href="">店舗紹介</a></li>
                     <li><a href="">アクセス</a></li>
                 </ul>
+                <div class="responsive-globalmenu">
+                    <a id="responsive-globalmenu-button" class="hamburger" href="#">
+                        <div class="hamburger-inner"></div>
+                    </a>  
+                </div>
             </nav>
         </section>
     </header>
@@ -131,7 +136,7 @@
                 </div>
                 <div class="form-text">
                     <p>以下にいい案を書いてください。</p>
-                    <textarea cols="50" rows="10" pleaceholder="テキストを入力してください" maxlength="500"></textarea>
+                    <textarea cols="40" rows="10" pleaceholder="テキストを入力してください" maxlength="500"></textarea>
                 </div>
                 <div class="form-button">
                     <input type="submit" value="送信" class="submit"><input type="reset" value="リセット" class="reset">
@@ -166,5 +171,16 @@
         </div>
     </footer>
 </div>
+<script>
+    (function(){
+        const buttonEvent = document.querySelector('.hamburger');
+        buttonEvent.addEventListener('click', function(){
+            const menuShow = document.querySelector('.site__ul');
+            menuShow.classList.toggle('show');
+        });
+        
+        
+    })();
+</script>   
 </body>
 </html>

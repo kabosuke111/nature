@@ -1,5 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
+@font-face {
+    font-family: mori;
+    src: url('../fonts/UtsukushiFONT.otf');
+}
+
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -13,6 +18,7 @@
 
 html {
     font-size: 62.5%;
+    height: 100%;
 }
 
 body {
@@ -33,7 +39,9 @@ hr {
 }
 
 #wrapper {
-    width: 1000px;
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
 }
 
 .site-title {
@@ -42,6 +50,8 @@ hr {
     color: #d1b695;
     padding: 30px;
     margin: 0;
+    font-family: 'mori', sans-serif;
+    height: 120px;
 }
 
 .section-title {
@@ -52,6 +62,7 @@ hr {
     background: #d1b695;
     color: #fff;
     text-shadow: 3px 3px 3px #222;
+    font-family: 'mori', sans-serif;
 }
 
 .contents-title {
@@ -60,15 +71,21 @@ hr {
     padding: 3px 25px;
     border: solid 1px #d1b695;
     border-radius: 15px;
+    font-family: 'mori', sans-serif;
 }
 
 /*----------------------------------------------------------------------------------
                                 ヘッダ
 ----------------------------------------------------------------------------------*/
+.responsive-globalmenu {
+    display: none;
+}
+
 .header-section {
     background: url("../images/forrest.jpg") no-repeat;
     width: 100%;
     height: 400px;
+    position: relative;
 }
 
 .global-navigation {
@@ -77,18 +94,18 @@ hr {
     padding: 15px;
 }
 
-.global-navigation ul {
+.site__ul {
     display: table;
     table-layout: fixed;
     width: 100%;
 }
 
-.global-navigation ul li {
+.site__ul li {
     display: table-cell;
     width: 100%;
 }
 
-.global-navigation ul li a {
+.site__ul li a {
     width: 100%;
     height: 48px;
     border-left: dotted 1px #d1b695;
@@ -98,11 +115,11 @@ hr {
     color: #FFF;
 }
 
-.global-navigation ul li:first-child a {
+.site__ul li:first-child a {
     border-left: none;
 }
 
-.global-navigation ul li a:hover {
+.site__ul li a:hover {
     transition: 0.7s;
     background: #fff;
     color: #d1b695;
@@ -114,7 +131,8 @@ hr {
 .forrest-news-wrap {
     text-align: left;
     font-size: 1.7rem;
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -142,7 +160,8 @@ hr {
 }
 
 .forrest-house-ul li {
-    width: 350px;
+    max-width: 350px;
+    width: 100%;
     margin: 0 20px;
 }
 
@@ -159,6 +178,10 @@ hr {
     line-height: 1.5;
     width: 300px;
     margin: 0 auto;
+}
+
+.forrest-house-dl {
+    margin: 0 auto 60px;
 }
 
 
@@ -212,7 +235,8 @@ hr {
 .form div {
     text-align: left;
     padding: 30px;
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     margin: 0 auto;
     border-bottom: solid 1px #d1b695;
 }
@@ -252,6 +276,28 @@ hr {
     padding: 5px 0;
     background: #fff;
     border-radius: 10px;
+    border: solid 1px #d1b695;
+    outline: none;
+}
+
+.form-name p {
+    display: inline-block;
+}
+
+.form-name input {
+    margin: 0 auto;
+    border: solid 1px #d1b695;
+    outline: none;
+    max-width: 200px;
+    width: 100%;
+}
+
+.form-text textarea {
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+    border: solid 1px #d1b695;
+    outline: none;
 }
 
 /*他のサイトへのリンク*/
@@ -302,4 +348,134 @@ hr {
 
 .huse {
     color: blue;
+}
+
+
+@media (max-width: 768px) {
+    .global-navigation {
+        background: none;
+        border: none;
+/*
+        background: linear-gradient(180deg, #d1b695, #6C503F);
+        border-top: solid 1px #d1b695;
+        padding: 15px;
+*/
+    }
+    
+    .site__ul {
+        display: none;
+        opacity: 0;
+        position: absolute;
+        top: 120px;
+        right: 0;
+        width: 0;
+        
+/*
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+*/
+    }
+
+    .site__ul li {
+        display: block;
+        background: linear-gradient(180deg, #d1b695, #6C503F);
+/*
+        display: table-cell;
+        width: 100%;
+*/
+    }
+
+    .site__ul li a {
+        border-left: none;
+        text-decoration: none;
+        padding: 30px 30px;
+        height: auto;
+        
+/*
+        width: 100%;
+        height: 48px;
+        border-left: dotted 1px #d1b695;
+        display: block;
+        padding: 18px 30px;
+        text-align: center;
+        color: #FFF;
+*/
+    }
+
+    .site__ul li:first-child a {
+/*        border-left: none;*/
+    }
+
+    .site__ul li a:hover {
+/*
+        transition: 0.7s;
+        background: #fff;
+        color: #d1b695;
+*/
+    }
+    
+    
+    .weekpoint {
+        display: none;
+    }
+    
+    .responsive-globalmenu {
+        display: block;
+    }
+    
+    .show {
+        display: block;
+        animation: opaci 0.5s forwards;
+   
+    }
+    
+    .forrest-news-wrap {
+        padding-left: 15px;
+    }
+    
+    .forrest-house-dl {
+    }
+    
+    .form .form-check, .form .form-gender {
+        padding: 30px 0;
+    }
+    
+    .form .form-check::after, .form .form-gender::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    .form-check p, .form-gender p {
+        padding-left: 20px;
+    }
+    
+    .form-check label, .form-gender label {
+        display: block;
+        margin: 5px;
+        padding: 20px;
+        background: linear-gradient(#eee, #bbb);
+        font-size: 1.8rem;
+        width: 47%;
+        float: left;
+    }
+    
+
+    
+    .footer-link li {
+        display: block;
+        margin: 0 12px 12px;
+    }
+}
+
+@keyframes opaci {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        width: 100%;
+    }
 }
